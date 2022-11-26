@@ -32,6 +32,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UGG-BN-qhN"/>
                     <connections>
+                        <outlet property="tableView" destination="wU1-xK-Vnm" id="khL-g2-A5Q"/>
                         <segue destination="vRT-hC-djX" kind="show" identifier="toDetailsVC" id="Xla-jC-uDK"/>
                     </connections>
                 </viewController>
@@ -39,28 +40,31 @@
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailsVC-->
         <scene sceneID="XXi-RN-Omo">
             <objects>
-                <viewController id="vRT-hC-djX" sceneMemberID="viewController">
+                <viewController id="vRT-hC-djX" customClass="detailsVC" customModule="SimpsonBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CED-VB-3Jy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUz-lW-zjT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUz-lW-zjT">
                                 <rect key="frame" x="81" y="194" width="230" height="197"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO5-sz-AHS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO5-sz-AHS">
                                 <rect key="frame" x="81" y="103" width="230" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="OPk-D5-YwX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m2-Dv-1mO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Job Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m2-Dv-1mO">
                                 <rect key="frame" x="81" y="445" width="230" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="ZPj-P9-P4x"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,8 +72,25 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UH2-V8-mVQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TO5-sz-AHS" firstAttribute="top" secondItem="UH2-V8-mVQ" secondAttribute="top" id="0Fh-Ly-9Ze"/>
+                            <constraint firstItem="hUz-lW-zjT" firstAttribute="trailing" secondItem="1m2-Dv-1mO" secondAttribute="trailing" id="MzJ-Zs-11C"/>
+                            <constraint firstItem="TO5-sz-AHS" firstAttribute="leading" secondItem="UH2-V8-mVQ" secondAttribute="leading" constant="81" id="ZVq-Ti-SEI"/>
+                            <constraint firstItem="hUz-lW-zjT" firstAttribute="top" secondItem="TO5-sz-AHS" secondAttribute="bottom" constant="29" id="hl8-lT-MNn"/>
+                            <constraint firstItem="TO5-sz-AHS" firstAttribute="centerX" secondItem="CED-VB-3Jy" secondAttribute="centerX" id="ipG-lO-xDL"/>
+                            <constraint firstItem="hUz-lW-zjT" firstAttribute="leading" secondItem="1m2-Dv-1mO" secondAttribute="leading" id="oRd-KO-QQO"/>
+                            <constraint firstItem="TO5-sz-AHS" firstAttribute="leading" secondItem="hUz-lW-zjT" secondAttribute="leading" id="pnR-jm-Qu9"/>
+                            <constraint firstItem="1m2-Dv-1mO" firstAttribute="top" secondItem="hUz-lW-zjT" secondAttribute="bottom" constant="54" id="sBk-Mf-eqq"/>
+                            <constraint firstItem="TO5-sz-AHS" firstAttribute="trailing" secondItem="hUz-lW-zjT" secondAttribute="trailing" id="tsJ-gO-2w4"/>
+                            <constraint firstItem="UH2-V8-mVQ" firstAttribute="bottom" secondItem="1m2-Dv-1mO" secondAttribute="bottom" constant="311" id="vGK-I4-YzB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iyt-fZ-DDR"/>
+                    <connections>
+                        <outlet property="imageView" destination="hUz-lW-zjT" id="C9Z-8w-PCU"/>
+                        <outlet property="jobLabel" destination="1m2-Dv-1mO" id="2Is-Ud-7Wg"/>
+                        <outlet property="nameLabel" destination="TO5-sz-AHS" id="aad-W0-RCC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXG-v3-SF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
