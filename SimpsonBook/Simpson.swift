@@ -12,7 +12,7 @@ class Simpson {
     
     var name : String
     var job : String
-    var image = UIImage()
+    var image : UIImage
     
     init(simpsonName: String, simpsonJob: String, simpsonImage: UIImage) {
         

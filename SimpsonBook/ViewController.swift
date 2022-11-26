@@ -11,6 +11,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    var mySimpson = [Simpson]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,46 +21,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         
         //Simpson Objects
-        //let homer = Simpson()
-        //homer.name = "Homer"
-        //homer.job = "Nuclear Safety"
-        //homer.image = UIImage(named: "Homer")!
-        //
-        //let marge = Simpson()
-        //marge.name = "Marge"
-        //marge.job = "Housewife"
-        //marge.image = UIImage(named: "Marge")!
-        //
-        //let lisa = Simpson()
-        //lisa.name = "Lisa"
-        //lisa.job = "Student"
-        //lisa.image = UIImage(named: "Lisa")!
-        //
-        //let bart = Simpson()
-        //bart.name = "Bart"
-        //bart.job = "Student"
-        //bart.image = UIImage(named: "Bart")!
-        //
-        //let maggie = Simpson()
-        //maggie.name = "Maggie"
-        //maggie.job = "Baby"
-        //maggie.image = UIImage(named: "Maggie")!
+        
+        let homer = Simpson(simpsonName: "Homer Simpson", simpsonJob: "Nuclear Safety", simpsonImage: UIImage(named: "Homer")!)
+        let marge = Simpson(simpsonName: "Marge Simpson", simpsonJob: "Housewife", simpsonImage: UIImage(named: "Marge")!)
+        let lisa = Simpson(simpsonName: "Lisa Simpson", simpsonJob: "Student", simpsonImage: UIImage(named: "Lisa")!)
+        let bart = Simpson(simpsonName: "Bart Simpson", simpsonJob: "Student", simpsonImage: UIImage(named: "Bart")!)
+        let maggie = Simpson(simpsonName: "Maggie Simpson", simpsonJob: "Baby", simpsonImage: UIImage(named: "Maggie")!)
         
         
         
-        let homer = Simpson(simpsonName: "Homer", simpsonJob: "Nuclear Safety", simpsonImage: UIImage(named: "Homer")!)
-        let marge = Simpson(simpsonName: "Marge", simpsonJob: "Housewife", simpsonImage: UIImage(named: "Marge")!)
-        let lisa = Simpson(simpsonName: "Lisa", simpsonJob: "Student", simpsonImage: UIImage(named: "Lisa")!)
-        let bart = Simpson(simpsonName: "Bart", simpsonJob: "Student", simpsonImage: UIImage(named: "Bart")!)
-        let maggie = Simpson(simpsonName: "Maggie", simpsonJob: "Baby", simpsonImage: UIImage(named: "Maggie")!)
-        
-        
-        
-        let homerArray = [homer,marge,lisa,bart,maggie]
-        
-        
-        
-        
+        mySimpson.append(homer)
+        mySimpson.append(marge)
+        mySimpson.append(lisa)
+        mySimpson.append(bart)
+        mySimpson.append(maggie)
         
         
         
@@ -70,12 +47,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return mySimpson.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Homer Simpson"
+        cell.textLabel?.text = mySimpson[indexPath.row].name
         return cell
     }
     
